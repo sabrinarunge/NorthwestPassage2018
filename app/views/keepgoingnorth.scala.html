@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Northwest Passage</title>
+</head>
+<body>
+<h1>Keep Going?</h1>
+<p>
+    Your navigator warns you that temperatures are colder than usual, so going north could be very risky.
+    You see your crew shivering as they scrub the deck, and you wonder if there is enough food
+    aboard to survive if the ship were to become stranded.
+</p>
+<form action="@routes.GameController.postNorthFromEngland" method="POST">
+    @helper.CSRF.formField
+    <input type="submit" value="Sail North"/>
+</form>
+<form action="@routes.GameController.postHomePort" method="POST">
+    @helper.CSRF.formField
+    <input type="submit" value="Return South"/>
+</form>
+</body>
+</html>

@@ -1,3 +1,4 @@
+@(playername : String)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,11 @@
 <p>You should have paid more attention to your intuition.
     You run ashore while trying to turn around in the latest dead end bay.
     While trying to patch up the ship you and your crew are almost eaten by a rampaging herd of feral kittens.
-    The kittens destroy what remains of your ship.  A passing Viking Cruise ship picks you up and takes you back to port in disgrace. The end.
+    The kittens destroy what remains of your ship.  A passing Viking Cruise ship picks you up and takes you back to port in disgrace.
+    The end for @playername.
+    <form action="/">
+        <input type="submit" value="New Player">
+    </form>
 </p>
 </body>
 </html>
