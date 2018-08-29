@@ -1,5 +1,6 @@
 package controllers;
 
+import play.Logger;
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -27,7 +28,12 @@ public class GameController extends Controller
     {
         DynamicForm form = formFactory.form().bindFromRequest();
         name = form.get("playername");
-        session().put("playername", name);
+        Logger.info("playername" + name);
+        if(name != null)
+        {
+            session().put("playername", name);
+        }
+
         return ok(views.html.start.render());
     }
 

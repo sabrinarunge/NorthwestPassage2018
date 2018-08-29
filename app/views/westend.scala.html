@@ -11,7 +11,12 @@
     When you get back to England the Queen rewards you with a monopoly on importing them.
     You spin happily ever after.
     The end for @playername.
-    <form action="/">
+    <form action="@routes.GameController.postStart" method="POST">
+        @helper.CSRF.formField
+        <input type="submit" value="Play Again">
+    </form>
+    <form action="@routes.GameController.getWelcome">
+        @helper.CSRF.formField
         <input type="submit" value="New Player">
     </form>
 </p>

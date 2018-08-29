@@ -14,7 +14,12 @@
     You are all able to swim to the shore of a frozen island where you find nothing to eat but lettuce.
     Years later you are rescued by a ship named Titanic on its way to the New World.
     The end for @playername.
-    <form action="/">
+    <form action="@routes.GameController.postStart" method="POST">
+        @helper.CSRF.formField
+        <input type="submit" value="Play Again">
+    </form>
+    <form action="@routes.GameController.getWelcome">
+        @helper.CSRF.formField
         <input type="submit" value="New Player">
     </form>
 </p>
