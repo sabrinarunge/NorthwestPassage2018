@@ -1,0 +1,26 @@
+@(playername : String)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oak Island</title>
+</head>
+<body>
+<h1>Took Refuge on Oak Island</h1>
+<p>
+    Your crew count has dropped below five, which makes it impossible to reach China and the elusive fidget spinners.
+    You do not even have enough men to head back to England, so you take refuge on Oak Island, where you spend
+    the rest of your days eating rodents and praying for death. The end for @playername.
+</p>
+<form action="@routes.GameController.postStart" method="POST">
+    @helper.CSRF.formField
+    <input type="submit" value="Play Again">
+</form>
+<form action="@routes.GameController.getWelcome">
+    @helper.CSRF.formField
+    <input type="submit" value="New Player">
+</form>
+<br>
+<img src="assets/images/island.jpg" title="island" width="400"/>
+</body>
+</html>

@@ -1,3 +1,4 @@
+@(remainingcrew : String)
 <!DOCTYPE html>
 @import helper._
 <html lang="en">
@@ -10,6 +11,7 @@
 <p>This way is not looking very promising.
     You keep going in and out of bays trying to find a way east but you always run into land.
     You are afraid you may run aground and be eaten by one of the roving bands of feral kittens you see frolicking upon the shore.
+    You lost one crew member due to injury. You have @remainingcrew crew members remaining.
 </p>
 <form action="@routes.GameController.postHomePort" method="POST">
     @CSRF.formField
@@ -19,5 +21,11 @@
     @CSRF.formField
     <input type="submit" value="Keep trying to sail East"/>
 </form>
+<form action="@routes.GameController.postOakIsland" method="POST">
+    @CSRF.formField
+    <input type="hidden" value="Take Refuge on Oak Island">
+</form>
+<br>
+<img src="assets/images/bay.jpg" title="bay" width="400"/>
 </body>
 </html>

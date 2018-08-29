@@ -1,3 +1,4 @@
+@(remainingcrew : String)
 <!DOCTYPE html>
 @import helper._
 <html lang="en">
@@ -14,7 +15,8 @@
     He says something about being the doctor and hands you a large bottle of pills that says Flintstones on it.
     He tells you to take these to cure your scurvy.  He goes back into the little building and it disappears.
     The crew takes the pills and are healed the next day.
-    You feel better now and think you see a clear path through the iceburgs.
+    You feel better now and think you see a clear path through the icebergs.
+    You lost one crew member due to injury. You have @remainingcrew crew members remaining.
 </p>
 <form action="@routes.GameController.postHomePort" method="POST">
     @CSRF.formField
@@ -24,5 +26,11 @@
     @CSRF.formField
     <input type="submit" value="Bravely sail west into the unknown"/>
 </form>
+<form action="@routes.GameController.postOakIsland" method="POST">
+    @CSRF.formField
+    <input type="hidden" value="Take Refuge on Oak Island">
+</form>
+<br>
+<img src="assets/images/iceberg.jpg" title="iceberg" width="400"/>
 </body>
 </html>
